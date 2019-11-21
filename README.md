@@ -3,8 +3,19 @@ Cinema Reservation System is an API based reservation system built using [Sinatr
 
 The use of this reservation system is to book seats for movies.
 
+The code base is hosted on Heroku. Host Name : https://crs-hays.herokuapp.com/
+
+# Table of Contents
+- [Installation](#installation)
+- [Project Setup](#project-setup)
+- [Heroku End Points](#heroku-end-points)
+- [List of APIs](#list-of-apis)
+    - [Create movie](#api-to-create-movie)
+    - [Get the list of movies](#api-to-get-the-list-of-movies)
+    - [Create Reservation](#api-to-create-reservation)
+    - [Get the list of reservations](#api-to-get-the-list-of-reservations)
+
 ## Installation
-### Ruby
 Before installing ruby, we have to install rvm. Follow the [RVM doc](https://rvm.io/rvm/install)
 to install ruby.
 ```shell script
@@ -43,12 +54,12 @@ Here `shotgun` is used to reload rack development server.
 shotgun -p 3000
 ```
 
-## API
+## List of APIs
 Use [postman](www.getpostman.com) tool or install it as a browser extension.
 ### API to Create Movie
 #### Request
 ```http request
-POST: localhost:3000/movies
+POST localhost:3000/movies
 ```
 Body
 ```json5
@@ -72,7 +83,7 @@ Body
 ### API to get the list of Movies
 #### Request
 ```http request
-GET: localhost:3000/movies?presented_day=tuesday
+GET localhost:3000/movies?presented_day=tuesday
 ```
 #### Response
 ```json5
@@ -90,7 +101,7 @@ GET: localhost:3000/movies?presented_day=tuesday
 ### API to Create Reservation
 #### Request
 ```http request
-POST: localhost:3000/reservations
+POST localhost:3000/reservations
 ```
 Body
 ```json5
@@ -113,7 +124,7 @@ Body
 ### API to get the list of Reservations
 #### Request
 ```http request
-GET: localhost:3000/reservations??start_date=2019-11-18&end_date=2019-11-20
+GET localhost:3000/reservations?start_date=2019-11-18&end_date=2019-11-20
 ```
 #### Response
 ```json5
@@ -160,4 +171,48 @@ GET: localhost:3000/reservations??start_date=2019-11-18&end_date=2019-11-20
     }
 ]
 ```
+
+
+## Heroku End Points
+End Point to create movie
+```http request
+POST https://crs-hays.herokuapp.com/movies
+```
+body
+```json5
+{
+	"name": "The Jungle Book",
+	"description": "The Jungle Book",
+	"image_url": "https://www.imdb.com/title/tt3040964/",
+	"presented_on": "2019-11-19"
+
+}
+```
+
+End Point to get list of movies
+```http request
+GET https://crs-hays.herokuapp.com/movies?presented_on=friday
+```
+
+End Point to create reservations
+```http request
+POST https://crs-hays.herokuapp.com/reservations
+```
+body
+```json5
+{
+	"username": "James",
+	"reserved_on": "2019-11-20",
+	"no_of_seats": "2",
+	"movie_id": "1"
+}
+
+```
+
+End Point to get list of reservations
+```http request
+GET https://crs-hays.herokuapp.com/reservations?start_date=2019-11-18&end_date=2019-11-20
+```
+
+
 
