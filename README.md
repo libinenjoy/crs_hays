@@ -8,12 +8,12 @@ The code base is hosted on Heroku. Host Name : https://crs-hays.herokuapp.com/
 # Table of Contents
 - [Installation](#installation)
 - [Project Setup](#project-setup)
-- [Heroku End Points](#heroku-end-points)
 - [List of APIs](#list-of-apis)
     - [Create movie](#api-to-create-movie)
     - [Get the list of movies](#api-to-get-the-list-of-movies)
     - [Create Reservation](#api-to-create-reservation)
     - [Get the list of reservations](#api-to-get-the-list-of-reservations)
+- [Heroku Endpoints](#heroku-endpoints)
 
 ## Installation
 Before installing ruby, we have to install rvm. Follow the [RVM doc](https://rvm.io/rvm/install)
@@ -173,8 +173,8 @@ GET localhost:3000/reservations?start_date=2019-11-18&end_date=2019-11-20
 ```
 
 
-## Heroku End Points
-End Point to create movie
+## Heroku Endpoints
+Endpoint to create movie
 ```http request
 POST https://crs-hays.herokuapp.com/movies
 ```
@@ -189,12 +189,12 @@ body
 }
 ```
 
-End Point to get list of movies
+Endpoint to get list of movies
 ```http request
 GET https://crs-hays.herokuapp.com/movies?presented_on=friday
 ```
 
-End Point to create reservations
+Endpoint to create reservations
 ```http request
 POST https://crs-hays.herokuapp.com/reservations
 ```
@@ -209,7 +209,7 @@ body
 
 ```
 
-End Point to get list of reservations
+Endpoint to get list of reservations
 ```http request
 GET https://crs-hays.herokuapp.com/reservations?start_date=2019-11-18&end_date=2019-11-20
 ```
