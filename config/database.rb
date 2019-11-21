@@ -4,7 +4,7 @@ require 'sequel/plugins/validation_helpers'
 require 'logger'
 
 #DB connect
-DB = Sequel.sqlite('crs_hays.db')
+DB = Sequel.connect(ENV['DATABASE_URL'])
 Sequel::Model.db = DB
 
 #Log all database related logs

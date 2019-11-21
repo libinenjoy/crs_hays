@@ -15,12 +15,6 @@ Create gemset by running the below command or open a new tab in the terminal whi
 ```shell script
  rvm gemset create crs_hays
 ```
-### Sqlite
-
-Install sqlite3 by executing the following command
-```shell script
-brew install sqlite
-```
 
 ## Project Setup
 
@@ -41,7 +35,7 @@ bundle install
 
 Migrate the database
 ```shell script
-bundle exec sequel -m db/migrations sqlite://crs_hays.db
+bundle exec sequel -m db/migrations postgres://[username]@localhost:5432/crs_hays_development
 ```
 
 Here `shotgun` is used to reload rack development server.

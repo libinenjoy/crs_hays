@@ -111,10 +111,8 @@ RSpec.configure do |config|
   end
 
   config.before(:suite) do
-    DB.run('PRAGMA foreign_keys = OFF;')
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
-    DB.run('PRAGMA foreign_keys = ON;')
   end
 end
 
