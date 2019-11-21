@@ -4,7 +4,7 @@ Cinema Reservation System is an API based reservation system built using [Sinatr
 The use of this reservation system is to book seats for movies.
 
 ## Installation
-###Ruby
+### Ruby
 Before installing ruby, we have to install rvm. Follow the [RVM doc](https://rvm.io/rvm/install)
 to install ruby.
 ```shell script
@@ -15,13 +15,15 @@ Create gemset by running the below command or open a new tab in the terminal whi
 ```shell script
  rvm gemset create crs_hays
 ```
-###Sqlite
+### Sqlite
+
 Install sqlite3 by executing the following command
 ```shell script
 brew install sqlite
 ```
 
-##Project Setup
+## Project Setup
+
 Clone the project from the github
 ```shell script
 git clone git@github.com:libinenjoy/crs_hays.git
@@ -47,10 +49,10 @@ Here `shotgun` is used to reload rack development server.
 shotgun -p 3000
 ```
 
-##API
+## API
 Use [postman](www.getpostman.com) tool or install it as a browser extension.
-###API to Create Movie
-####Request
+### API to Create Movie
+#### Request
 ```http request
 POST: localhost:3000/movies
 ```
@@ -64,7 +66,7 @@ Body
 
 }
 ```
-####Response
+#### Response
 ```json5
 {
     "message": "Movie Created Successfully",
@@ -73,12 +75,12 @@ Body
 }
 ```
 
-###API to get the list of Movies
-####Request
+### API to get the list of Movies
+#### Request
 ```http request
 GET: localhost:3000/movies?presented_day=tuesday
 ```
-####Response
+#### Response
 ```json5
 [
     {
@@ -91,8 +93,8 @@ GET: localhost:3000/movies?presented_day=tuesday
 ]
 ```
 
-###API to Create Reservation
-####Request
+### API to Create Reservation
+#### Request
 ```http request
 POST: localhost:3000/reservations
 ```
@@ -114,12 +116,12 @@ Body
 }
 ```
 
-###API to get the list of Reservations
-####Request
+### API to get the list of Reservations
+#### Request
 ```http request
 GET: localhost:3000/reservations??start_date=2019-11-18&end_date=2019-11-20
 ```
-####Response
+#### Response
 ```json5
 [
     {
