@@ -1,4 +1,4 @@
-# CRS
+# Cinema Reservation System
 Cinema Reservation System is an API based reservation system built using [Sinatra](http://sinatrarb.com/) with [Sequel](https://sequel.jeremyevans.net/).
 
 The use of this reservation system is to book seats for movies.
