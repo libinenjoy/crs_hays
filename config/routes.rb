@@ -26,7 +26,7 @@ class Routes < Sinatra::Application
   end
 
   not_found do
-    "Requested Service is not found!".to_json
+    "Please refer README.md for endpoint details!".to_json
   end
 
   private
