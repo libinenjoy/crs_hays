@@ -22,6 +22,7 @@ jobs:
         ports: ['5432:5432']
         env:
           POSTGRES_USER: ci
+          POSTGRES_HOST: postgres
           POSTGRES_DB: crs_hays_test
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -37,8 +38,8 @@ jobs:
       - name: Install dependencies
         run: bundle install
       - name: Migrate the DB
-        run: bundle exec sequel -m db/migrations postgres://ci@localhost:5432/crs_hays_test
+        run: bundle exec sequel -m db/migrations postgres://ci@postgres:5432/crs_hays_test
       - name: Run the web server
         run: shotgun -p 3000 -d
       - name: Run test cases
-        run: bundle exec rspec 
+        run: bundle exec rspec
